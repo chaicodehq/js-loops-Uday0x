@@ -37,16 +37,15 @@ export function cricketScoreboard(balls) {
   }
 
   let totalRuns= 0;
-  let totalBalls =0
+  let totalBalls = balls.length
   let singles = 0
   let wickets = 0;
   let fours = 0;
   let sixes = 0;
 
   for(let i =0 ; i<balls.length;i++){
-   
+
     if(wickets == 10) break
-    totalBalls++
     if(balls[i] == -1){
       wickets++;
     }
@@ -60,7 +59,7 @@ export function cricketScoreboard(balls) {
     }
 
    if(balls[i] == 1 || balls[i] ==2 || balls[i]==3 || balls[i]==5){
-    singles += balls[i]++
+    singles = balls[i]++
    }
 
   }
@@ -75,3 +74,7 @@ export function cricketScoreboard(balls) {
   sixes
   }
 }
+
+
+console.log(cricketScoreboard([-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,4]))
+     
