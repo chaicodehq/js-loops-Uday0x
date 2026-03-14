@@ -1,4 +1,4 @@
-/**
+5/**
  * 🪔 Sharma ji ki Diwali Decoration
  *
  * Sharma ji apne ghar ko Diwali pe sajana chahte hain light strings se.
@@ -39,4 +39,70 @@
  */
 export function diwaliLightsPlan(lightStrings, budget) {
   // Your code here
+  if(!Array.isArray(lightStrings) || budget <0){
+      return { selected: [], totalLength: 0, totalCost: 0 }
+  }
+
+  let arr = [...lightStrings]
+  let totalCost =0
+  for (let ei of lightStrings){
+    let cost =0
+    if(ei.color == "golden"){
+      cost = 50
+    }
+
+    else if(ei.color == "white"){
+      cost = 30
+    }
+
+    else if(ei.color == "multicolor"){
+      cost = 40
+    }
+
+    else{
+      cost = 35
+    }
+
+
+  totalCost = cost * ei.length
+    
+  }
+
+  while(totalCost <= budget){
+      arr.pop()
+  }
+  
+  let len = 0
+  let finalCost = 0
+  for(let ei of arr){
+    len+=ei.length
+
+    let cost =0
+    if(ei.color == "golden"){
+      cost = 50
+    }
+
+    else if(ei.color == "white"){
+      cost = 30
+    }
+
+    else if(ei.color == "multicolor"){
+      cost = 40
+    }
+
+    else{
+      cost = 35
+    }
+
+    finalCost = cost * ei.length
+  }
+
+
+  let final ={
+      selected:arr,
+      totalLength:len,
+      totalCost:finalCost
+    }
+
+    return final
 }
