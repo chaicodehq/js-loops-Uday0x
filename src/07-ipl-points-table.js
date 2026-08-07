@@ -63,7 +63,7 @@ export function iplPointsTable(matches) {
     if(!acc[team2]){
       acc[team2] ={
         team:team2,
-         played:0,
+        played:0,
         won:0,
         lost:0,
         tied:0,
